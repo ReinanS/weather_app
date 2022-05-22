@@ -1,4 +1,3 @@
-import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 
 class Failure extends Equatable {
@@ -16,8 +15,4 @@ class ServerFailure extends Failure {
 
 class ConnectionFailure extends Failure {
   const ConnectionFailure(String message) : super(message);
-}
-
-class DatabaseFailure extends Failure {
-  const DatabaseFailure(String message) : super(message);
 }
