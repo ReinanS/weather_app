@@ -17,7 +17,7 @@ class WeatherRepositoryImpl implements WeatherRepository {
       final result = await remoteDataSource.getCurrentWeather(cityName);
       return Right(result.toEntity());
     } on ServerException {
-      return const Left(ServerFailure(''));
+      return const Left(ServerFailure('Server failure'));
     } on SocketException {
       return const Left(ConnectionFailure('Failed to connect to the network'));
     }
