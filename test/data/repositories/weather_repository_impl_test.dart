@@ -64,6 +64,7 @@ void main() {
 
       // assert
       verify(mockRemoteDataSource.getCurrentWeather(tCityName));
+
       expect(
           result,
           equals(const Left(

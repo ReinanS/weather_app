@@ -12,6 +12,8 @@ import 'package:weather_app/presentation/bloc/weather_bloc.dart';
 import 'package:weather_app/presentation/bloc/weather_event.dart';
 import 'package:weather_app/presentation/bloc/weather_state.dart';
 import 'package:weather_app/presentation/pages/weather_page.dart';
+import 'package:weather_app/presentation/widgets/barometer_widget.dart';
+import 'package:weather_app/presentation/widgets/wind_widget.dart';
 
 import '../../helpers/mocks/fixtures.dart';
 
@@ -26,7 +28,6 @@ void main() {
   late MockWeatherBloc mockWeatherBloc;
 
   setUpAll(() async {
-    HttpOverrides.global = null;
     registerFallbackValue(FakeWeatherState());
     registerFallbackValue(FakeWeatherEvent());
 
@@ -77,28 +78,30 @@ void main() {
     expect(find.byType(CircularProgressIndicator), equals(findsOneWidget));
   });
 
-  // testWidgets('should show widget contain weather data when state is has data',
-  //     (WidgetTester tester) async {
-  //   // arrange
-  //   when(() => mockWeatherBloc.state).thenReturn(WeatherHasData(tWeather));
+  testWidgets('should show widget contain weather data when state is has data',
+      (WidgetTester tester) async {
+    // arrange
+    when(() => mockWeatherBloc.state).thenReturn(WeatherHasData(tWeather));
 
-  //   // act
-  //   await tester.pumpWidget(_makeTestableWidget(const WeatherPage()));
-  //   await tester.runAsync(
-  //     () async {
-  //       final HttpClient client = HttpClient();
-  //       await client.getUrl(Uri.parse(Urls.weatherIcon(
-  //           "//cdn.weatherapi.com/weather/64x64/night/116.png")));
+    // act
+    await tester.pumpWidget(_makeTestableWidget(const WeatherPage()));
+    // await tester.runAsync(
+    //   () async {
+    //     final HttpClient client = HttpClient();
+    //     await client.getUrl(Uri.parse(Urls.weatherIcon(
+    //         "//cdn.weatherapi.com/weather/64x64/night/116.png")));
 
-  //       const hour = 'cdn.weatherapi.com/weather/64x64/night/176.png';
+    //     const hour = 'cdn.weatherapi.com/weather/64x64/night/176.png';
 
-  //       await client
-  //           .getUrl(Uri.parse('https://${(hour).toString().substring(2)}'));
-  //     },
-  //   );
-  //   await tester.pumpAndSettle();
+    //     await client
+    //         .getUrl(Uri.parse('https://${(hour).toString().substring(2)}'));
+    //   },
+    // );
+    // await tester.pumpAndSettle();
 
-  //   // assert
-  //   expect(find.byKey(const Key('weather_data')), equals(findsOneWidget));
-  // });
+    // assert
+    expect(find.byKey(const Key('weather_data')), equals(findsOneWidget));
+    expect(find.byType(WindWidget), findsOneWidget);
+    expect(find.byType(BarometerWidget), findsOneWidget);
+  });
 }
