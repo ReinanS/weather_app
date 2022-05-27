@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/domain/entities/current.dart';
-import 'package:weather_app/presentation/pages/components/app_colors.dart';
-import 'package:weather_app/presentation/pages/components/app_text_componet.dart';
-import 'package:weather_app/presentation/pages/components/custom_list_tile.dart';
+import 'package:weather_app/presentation/widgets/app_colors.dart';
+import 'package:weather_app/presentation/widgets/app_text_componet.dart';
+import 'package:weather_app/presentation/widgets/custom_list_tile.dart';
 
 class WindWidget extends StatelessWidget {
   final Current current;

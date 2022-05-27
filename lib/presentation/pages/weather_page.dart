@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_app/presentation/bloc/weather_bloc.dart';
 import 'package:weather_app/presentation/bloc/weather_state.dart';
-import 'package:weather_app/presentation/pages/components/barometer_widget.dart';
-import 'package:weather_app/presentation/pages/components/carousel_widget.dart';
-import 'package:weather_app/presentation/pages/components/city_info_widget.dart';
-import 'package:weather_app/presentation/pages/components/header_widget.dart';
-import 'package:weather_app/presentation/pages/components/wind_widget.dart';
+import 'package:weather_app/presentation/widgets/barometer_widget.dart';
+import 'package:weather_app/presentation/widgets/carousel_widget.dart';
+import 'package:weather_app/presentation/widgets/city_info_widget.dart';
+import 'package:weather_app/presentation/widgets/header_widget.dart';
+import 'package:weather_app/presentation/widgets/wind_widget.dart';
 
 class WeatherPage extends StatelessWidget {
   const WeatherPage({Key? key}) : super(key: key);
@@ -26,7 +26,9 @@ class WeatherPage extends StatelessWidget {
                   BlocBuilder<WeatherBloc, WeatherState>(
                       builder: (context, state) {
                     if (state is WeatherLoading) {
-                      return const Center(child: CircularProgressIndicator());
+                      return const SizedBox(
+                          height: 600,
+                          child: Center(child: CircularProgressIndicator()));
                     }
 
                     if (state is WeatherEmpty) {

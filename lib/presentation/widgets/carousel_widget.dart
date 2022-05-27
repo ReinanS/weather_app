@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/domain/entities/hour_model.dart';
-import 'package:weather_app/presentation/pages/components/app_colors.dart';
-import 'package:weather_app/presentation/pages/components/app_text_componet.dart';
+import 'package:weather_app/presentation/widgets/app_colors.dart';
+import 'package:weather_app/presentation/widgets/app_text_componet.dart';
 
 class CarouselWidget extends StatelessWidget {
   final List<Hour> listHours;

@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_app/domain/use_cases/get_current_weather.dart';
 import 'package:weather_app/presentation/bloc/weather_event.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/presentation/pages/components/app_colors.dart';
-import 'package:weather_app/presentation/pages/components/app_text_componet.dart';
+import 'package:weather_app/presentation/widgets/app_colors.dart';
+import 'package:weather_app/presentation/widgets/app_text_componet.dart';
 
 class CustomListTile extends StatelessWidget {
   final String first;

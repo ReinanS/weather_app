@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/data/constants.dart';
 import 'package:weather_app/domain/entities/weather.dart';
-import 'package:weather_app/presentation/pages/components/app_colors.dart';
-import 'package:weather_app/presentation/pages/components/app_text_componet.dart';
+import 'package:weather_app/presentation/widgets/app_colors.dart';
+import 'package:weather_app/presentation/widgets/app_text_componet.dart';
 
 class CityInfoWidget extends StatelessWidget {
   final Weather weather;
@@ -26,6 +26,7 @@ class CityInfoWidget extends StatelessWidget {
         const SizedBox(height: 8),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Flexible(
               child: AppTextComponent(

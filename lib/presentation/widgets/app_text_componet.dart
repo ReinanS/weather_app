@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/presentation/pages/components/app_colors.dart';
+import 'package:weather_app/presentation/widgets/app_colors.dart';
 
 class AppTextComponent extends StatelessWidget {
   final FontWeight isBold;
