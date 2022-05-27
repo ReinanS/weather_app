@@ -1,8 +1,11 @@
 class Urls {
-  static const String baseUrl = 'https://api.openweathermap.org/data/2.5';
-  static const String apiKey = 'cc95d932d5a45d33a9527d5019475f2c';
+  static const String _baseUrl = 'http://api.weatherapi.com/v1/forecast.json';
+
+  static const String _apiKey = '66eb35a4c0134ef3a23153944222403';
+
   static String currentWeatherByName(String city) =>
-      '$baseUrl/weather?q=&appid=$apiKey';
-  static String weatherIcon(String iconCode) =>
-      'http://openweathermap.org/img/wn/$iconCode@2x.png';
+      '$_baseUrl?q=$city&key=$_apiKey';
+
+  static String weatherIcon(String iconUrl) =>
+      'https://${((iconUrl).toString().substring(2)).replaceAll("64", "128")}';
 }
